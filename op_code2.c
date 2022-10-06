@@ -32,3 +32,32 @@ void pchar(stack_t **stack, unsigned int line_n)
 	}
 	printf("%c\n", (char)h->n);
 }
+
+/**
+ * pstr - Print string based of ascii values in linked list.
+ * @stack: Beginning of linked list.
+ * @line_n: Line number.
+ */
+void pstr(stack_t **stack, unsigned int line_n)
+{
+	stack_t *h = *stack;
+	char string[1000];
+	int i = 0;
+	(void)line_n;
+
+	memset(string, 0, 1000);
+	if (!h)
+		printf("\n");
+	while (h)
+	{
+		/*if (h->n < 1 && h->n > 127)*/
+		if (!(h->n > 64 && h->n < 91) && !(h->n > 96 && h->n < 123))
+		{
+			break;
+		}
+		string[i] = (char)h->n;
+		i++;
+		h = h->next;
+	}
+	printf("%s\n", string);
+}
