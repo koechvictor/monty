@@ -30,3 +30,21 @@ stack_t *push(stack_t **head, int n)
 
 	return (new);
 }
+
+/**
+ * pall - prints doubly linked list
+ * @stack: start of doubly linked list
+ * @line_n: line number
+ */
+void pall(stack_t **stack, unsigned int line_n)
+{
+	stack_t *h = *stack;
+
+	if (!stack)
+	{
+		fprintf(stderr, "L%d: can't pall, stack empty\n", line_n);
+		exit(EXIT_FAILURE);
+	}
+	for (; h; h = h->next)
+		fprintf(stdout, "%d\n", h->n);
+}
