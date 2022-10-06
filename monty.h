@@ -87,5 +87,12 @@ stack_t *push(stack_t **head, int n);
 void pall(stack_t **h, unsigned int line_n);
 void pint(stack_t **h, unsigned int line_n);
 void pop(stack_t **h, unsigned int line_n);
+void swap(stack_t **stack, unsigned int line_n);
+void add(stack_t **stack, unsigned int line_n);
+void sub(stack_t **stack, unsigned int line_n);
+void _div(stack_t **stack, unsigned int line_n);
+void mod(stack_t **stack, unsigned int line_n);
+void mul(stack_t **stack, unsigned int line_n);
+void nop(stack_t **stack, unsigned int line_n);
 
 #endif
