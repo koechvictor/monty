@@ -16,3 +16,20 @@ void add(stack_t **stack, unsigned int line_n)
 	(*stack)->next->n += (*stack)->n;
 	pop(stack, line_n);
 }
+
+/**
+ * sub - adds the top two elements of the stack
+ * @stack: start of doubly linked list
+ * @line_n: line number
+ */
+void sub(stack_t **stack, unsigned int line_n)
+{
+	if (!(*stack) || !(*stack)->next)
+	{
+		free_stack(*stack);
+		fprintf(stderr, "L%d: can't sub, stack too short\n", line_n);
+		exit(EXIT_FAILURE);
+	}
+	(*stack)->next->n -= (*stack)->n;
+	pop(stack, line_n);
+}
