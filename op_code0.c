@@ -48,3 +48,21 @@ void pall(stack_t **stack, unsigned int line_n)
 	for (; h; h = h->next)
 		fprintf(stdout, "%d\n", h->n);
 }
+
+/**
+ * pint - prints first node of linked list
+ * @stack: first node of linked list
+ * @line_n: line number
+ */
+void pint(stack_t **stack, unsigned int line_n)
+{
+	stack_t *h = *stack;
+
+	if (!h)
+	{
+		fprintf(stderr, "L%d: can't pint, stack empty\n", line_n);
+		exit(EXIT_FAILURE);
+	}
+	fprintf(stdout, "%d\n", h->n);
+
+}
