@@ -22,3 +22,29 @@ char **split_newline(buf_struct *a)
 		return (NULL);
 	return (a->list_cmd);
 }
+/**
+ * split_spaces - Tokenize each command from its value.
+ * @buff: Index from first tokenized list of commands.
+ * @a: Global struct for buffers.
+ * Return: Tokenized command.
+ */
+char **split_spaces(char *buff, buf_struct *a)
+{
+	char delim[] = " \t";
+	char *token;
+	int i = 0;
+
+	token = strtok(buff, delim);
+	while (token != NULL && i < 2)
+	{
+		a->tok_cmd[i] = token;
+		token = strtok(NULL, delim);
+		i++;
+	}
+	a->tok_cmd[i] = NULL;
+	if (a->tok_cmd[0] == NULL)
+		return (NULL);
+	if (strncmp(a->tok_cmd[0], "#", 1) == 0)
+		a->tok_cmd[0] = "nop";
+	return (a->tok_cmd);
+}
