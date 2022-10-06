@@ -81,4 +81,11 @@ int digits_only(char *str);
 
 /* End of helper functions */
 
+/* monty functions */
+
+stack_t *push(stack_t **head, int n);
+void pall(stack_t **h, unsigned int line_n);
+void pint(stack_t **h, unsigned int line_n);
+void pop(stack_t **h, unsigned int line_n);
+
 #endif
