@@ -32,7 +32,7 @@ typedef struct stack_s
  * @f: function to handle the opcode
  *
  * Description: opcode and its function
- * for stack, queues, LIFO, FIFO Holberton project
+ * for stack, queues, LIFO, FIFO project
  */
 typedef struct instruction_s
 {
@@ -61,5 +61,12 @@ typedef struct buf_struct
 	char *tok_cmd[1000];
 	char **argv;
 } buf_struct;
+
+/* Execute functions */
+
+void (*get_op_func(char *s))(stack_t **stack, unsigned int line_number);
+void exec_loop(buf_struct *a);
+
+/* End of execute functions */
 
 #endif
